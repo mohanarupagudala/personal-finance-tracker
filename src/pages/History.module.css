@@ -1,0 +1,85 @@
+.container {
+  min-height: calc(100vh - 70px);
+  padding: 35px 50px;
+  background: #f8fafc;
+}
+
+.title {
+  margin-bottom: 8px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.subtitle {
+  margin-bottom: 30px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+.list {
+  max-width: 850px;
+}
+
+.empty {
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  color: #64748b;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.transaction {
+  padding: 20px;
+  margin-bottom: 15px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transaction:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.12);
+}
+
+.transaction h3 {
+  margin: 0 0 10px;
+  color: #1e293b;
+  font-size: 19px;
+}
+
+.transaction p {
+  margin: 6px 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.button {
+  margin-top: 12px;
+  padding: 9px 16px;
+  border: none;
+  border-radius: 7px;
+  background: #1e293b;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background: #334155;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 25px 20px;
+  }
+
+  .list {
+    max-width: 100%;
+  }
+}
