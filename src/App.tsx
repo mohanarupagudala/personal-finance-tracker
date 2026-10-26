@@ -14,7 +14,6 @@ import type { Transaction } from "./types/Transaction";
 export default function App() {
 
   const [transactions, setTransactions] = useState<Transaction[]>([]);
-
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   
@@ -54,50 +53,22 @@ export default function App() {
     <Routes>
 
       <Route element={<Layout />}>
-
-        <Route
-          path="/"
-          element={
-            <Dashboard
-              transactions={transactions}
+        <Route path="/"element={ <Dashboard transactions={transactions} />
+          }
+        />
+        <Route path="/add" element={ <AddTransaction onAdd={addTransaction}/>
+          }
+        />
+        <Route path="/history" element={ <History transactions={transactions} onDelete={deleteTransaction}
             />
           }
         />
-
-        <Route
-          path="/add"
-          element={
-            <AddTransaction
-              onAdd={addTransaction}
-            />
+        <Route path="/history/:id"element={ <TransactionDetail transactions={transactions}/>
           }
         />
 
-        <Route
-          path="/history"
-          element={
-            <History
-              transactions={transactions}
-              onDelete={deleteTransaction}
-            />
-          }
-        />
-
-        <Route
-          path="/history/:id"
-          element={
-            <TransactionDetail
-              transactions={transactions}
-            />
-          }
-        />
-
-        <Route
-          path="/reports"
-          element={
-            <ProtectedRoute
-              isLoggedIn={isLoggedIn}
-            >
+        <Route path="/reports"  element={ <ProtectedRoute  isLoggedIn={isLoggedIn}
+        >
               <Reports
                 transactions={transactions}
               />
